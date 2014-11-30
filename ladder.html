@@ -1,0 +1,45 @@
+<div class='heading1'>PLANETARY ANNIHILATION LADDER</div>
+	<div class='sub-tab-container'>
+		<div data-bind="css: {'selected-tab': model.game.ladder_tab() == 0}, click: function(){ model.game.ladder_tab(0); }" class="tab">
+			<div class="tab-icon"><img data-bind="attr: {src: path.join(model.game.folder(), 'img/badge_level_5_28px.png')}"></div>
+			<span class="tab-display-name">Uber</span> 
+		</div>
+		<div data-bind="css: {'selected-tab': model.game.ladder_tab() == 1}, click: function(){ model.game.ladder_tab(1); }" class="tab">
+			<div class="tab-icon"><img data-bind="attr: {src: path.join(model.game.folder(), 'img/badge_level_4_28px.png')}"></div>
+			<span class="tab-display-name">Platinum</span> 
+		</div>
+		<div data-bind="css: {'selected-tab': model.game.ladder_tab() == 2}, click: function(){ model.game.ladder_tab(2); }" class="tab">
+			<div class="tab-icon"><img data-bind="attr: {src: path.join(model.game.folder(), 'img/badge_level_3_28px.png')}"></div>
+			<span class="tab-display-name">Gold</span> 
+		</div>
+		<div data-bind="css: {'selected-tab': model.game.ladder_tab() == 3}, click: function(){ model.game.ladder_tab(3); }" class="tab">
+			<div class="tab-icon"><img data-bind="attr: {src: path.join(model.game.folder(), 'img/badge_level_2_28px.png')}"></div>
+			<span class="tab-display-name">Silver</span> 
+		</div>
+		<div data-bind="css: {'selected-tab': model.game.ladder_tab() == 4}, click: function(){ model.game.ladder_tab(4); }" class="tab">
+			<div class="tab-icon"><img data-bind="attr: {src: path.join(model.game.folder(), 'img/badge_level_1_28px.png')}"></div>
+			<span class="tab-display-name">Bronze</span> 
+		</div>
+		<div class="far-right-tab-list">
+			<div class='text-button' data-bind="click: function() { model.game.loadLadders(); }">Refresh</div> 
+		</div>
+	</div>
+<!-- ko if: model.game.loading_ladder() > 0 -->
+	<div class='loading'><img style='float:left;' src='assets/img/loading.gif'><div class='loading-text' data-bind='text: "Loading ladder..."'></div></div><div style='clear:both; margin-bottom: 20px;'></div>
+<!-- /ko -->
+<!-- ko if: model.game.loading_ladder() == 0 -->
+	<div class='ladder-entry'>
+		<div class='ladder-image heading2'>Rank</div>
+		<div class='ladder-rank'></div>
+		<div class='ladder-name heading2'>Player</div>
+		<div class='ladder-last-match heading2'>Last Match Played</div>
+	</div>
+	<!-- ko foreach: model.game.current_ladder() -->
+		<div class='ladder-entry'>
+			<div class='ladder-image'><img data-bind="attr: {src: path.join(model.game.folder(), 'img/slot_bground_' + model.game.current_ladder_name() + '.png')}"></div>
+			<div class='ladder-rank' data-bind="text: ($index() + 1)"></div>
+			<div class='ladder-name' data-bind="text: display_name"></div>
+			<div class='ladder-last-match' data-bind="text: LastMatchAtString"></div>
+		</div>
+	<!-- /ko -->
+<!-- /ko -->

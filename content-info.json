@@ -1,0 +1,20 @@
+{
+    "content_id": "com.pahub.content.plugin.game",
+    "store_id": "com.pahub.content.plugin.store.plugin",
+    "display_name": "Game",
+    "description": "Plugin for game functionality including ladders, lobby and matchmaking",
+    "author": "Raevn",
+    "version": "0.1.0",
+    "date": "2014/11/30",
+    "resources": [
+        "com.pahub.content.plugin.game.js",
+        "com.pahub.content.plugin.game.css"
+    ],
+    "load_func": "load_plugin_game",
+    "unload_func": "unload_plugin_game",
+    "enabled": true,
+    "required": {
+        "com.pahub": ">=0.3.0",
+        "com.pahub.content.plugin.contenthub": ">=0.3.0"
+    }
+}

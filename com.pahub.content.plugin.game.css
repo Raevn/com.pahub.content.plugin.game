@@ -1,0 +1,38 @@
+.ladder-entry {
+	display: block;
+	position: relative;
+	height: 42px;
+	margin-top: 4px;
+}
+
+.ladder-name {
+	display: inline-block;
+	width: 250px;
+	padding-left: 100px;
+	color: #F9F9F9;
+	margin-top: 10px;
+}
+
+.ladder-last-match {
+	display: inline-block;
+	color: #F9F9F9;
+	margin-top: 10px;
+}
+
+.ladder-rank {
+	position: absolute;
+	width: 90px;
+	text-align: center;
+	color: #F9F9F9;
+	margin-top: 16px;
+	z-index: 10;
+}
+
+.ladder-image {
+	position: absolute;
+	width: 90px;
+	left: 0px;
+	top: 0px;
+	color: #F9F9F9;
+	margin-top: 10px;
+}
